@@ -1,7 +1,7 @@
 package com.learning.bootlaunch.controller;
 
 import com.learning.bootlaunch.AjaxResponse;
-import com.learning.bootlaunch.entity.Article;
+import com.learning.bootlaunch.model.Article;
 import com.learning.bootlaunch.service.ArticleRestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

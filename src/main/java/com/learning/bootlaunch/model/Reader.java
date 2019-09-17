@@ -1,4 +1,4 @@
-package com.learning.bootlaunch.entity;
+package com.learning.bootlaunch.model;
 
 public class Reader {
     private String name;

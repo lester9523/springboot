@@ -1,11 +1,9 @@
 package com.learning.bootlaunch.service;
 
-import com.learning.bootlaunch.AjaxResponse;
-import com.learning.bootlaunch.entity.Article;
+import com.learning.bootlaunch.model.Article;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import sun.swing.StringUIClientPropertyKey;
 
 import java.util.*;
 

@@ -1,14 +1,13 @@
 package com.learning.bootlaunch;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learning.bootlaunch.entity.Article;
+import com.learning.bootlaunch.model.Article;
 import com.learning.bootlaunch.service.ArticleRestService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;

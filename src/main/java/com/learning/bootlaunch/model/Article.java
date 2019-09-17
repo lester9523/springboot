@@ -1,4 +1,4 @@
-package com.learning.bootlaunch.entity;
+package com.learning.bootlaunch.model;
 
 import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
