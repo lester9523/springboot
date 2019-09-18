@@ -15,7 +15,7 @@ public class ArticleJDBCDAO {
     private JdbcTemplate jdbcTemplate;
 
     //保存文章
-    public void save(Article article) {
+    public void save(Article article, JdbcTemplate primaryJdbcTemplate) {
         //jdbcTemplate.update适合于insert 、update和delete操作；
         jdbcTemplate.update("INSERT INTO article(author, title,content,create_time) values(?, ?, ?, ?)",
                 article.getAuthor(),

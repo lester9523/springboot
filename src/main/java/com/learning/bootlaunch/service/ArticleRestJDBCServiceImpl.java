@@ -4,6 +4,7 @@ import com.learning.bootlaunch.dao.ArticleJDBCDAO;
 import com.learning.bootlaunch.model.Article;
 import com.learning.bootlaunch.service.ArticleRestService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,10 +19,17 @@ public class ArticleRestJDBCServiceImpl implements ArticleRestService {
     private
     ArticleJDBCDAO articleJDBCDAO;
 
+    @Resource
+    private JdbcTemplate primaryJdbcTemplate;
+    @Resource
+    private JdbcTemplate secondaryJdbcTemplate;
+
+
     @Transactional
-    public Article saveArticle(Article article) {
-        articleJDBCDAO.save(article);
-        //int a = 2/0；
+    public Article saveArticle( Article article) {
+        articleJDBCDAO.save(article,primaryJdbcTemplate);
+        articleJDBCDAO.save(article,secondaryJdbcTemplate);
+        int a = 2/0;
         return article;
     }
 
