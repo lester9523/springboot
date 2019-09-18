@@ -1,0 +1,8 @@
+server:
+  port: 8899
+ # 运行端口
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#Json序列化配置 默认格式   yyyy-MM-dd HH:mm:ss  东八区
