@@ -6,22 +6,3 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 #Json序列化配置 默认格式   yyyy-MM-dd HH:mm:ss  东八区
-
-family:
-  family-name: "happy family"
-  father:
-    name: zimug
-    age: 18
-  mother:
-    alias:
-      - lovely
-      - ailice
-  child:
-    name: zimug
-    age: 5
-    friends:
-      - hobby: football
-        sex:  male
-      - hobby: basketball
-        sex: female
-
