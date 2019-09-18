@@ -1,9 +1,7 @@
 package com.learning.bootlaunch;
 
-import com.learning.bootlaunch.controller.ArticleRestController;
-import com.learning.bootlaunch.service.ArticleRestService;
+import com.learning.bootlaunch.service.ArticleRestJDBCServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,7 +12,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.annotation.Resource;
 
@@ -32,7 +29,7 @@ public class ArticleRestControllerTest2 {
 
 
     @Resource
-    ArticleRestService articleRestService;
+    ArticleRestJDBCServiceImpl articleRestJDBCServiceImpl;
 
 //    @Before
 //    public void setUp() {

@@ -2,7 +2,7 @@ package com.learning.bootlaunch;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learning.bootlaunch.model.Article;
-import com.learning.bootlaunch.service.ArticleRestService;
+import com.learning.bootlaunch.service.ArticleRestJDBCServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +33,7 @@ public class ArticleRestControllerTest3 {
     private MockMvc mockMvc;
 
     @MockBean
-    ArticleRestService articleRestService;
+    ArticleRestJDBCServiceImpl articleRestJDBCServiceImpl;
 
 //    @Resource
 //    ArticleRestService articleRestService;
@@ -59,7 +59,7 @@ public class ArticleRestControllerTest3 {
 //        articleRestService.saveArcticle(readValue);
 
         //打桩
-        when(articleRestService.saveArcticle(readValue)).thenReturn("ok");
+//        when(articleRestJDBCServiceImpl.saveArcticle(readValue)).thenReturn("ok");
 
 
 

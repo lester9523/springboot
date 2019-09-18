@@ -2,6 +2,7 @@ package com.learning.bootlaunch.controller;
 
 import com.learning.bootlaunch.AjaxResponse;
 import com.learning.bootlaunch.model.Article;
+import com.learning.bootlaunch.service.ArticleRestJDBCServiceImpl;
 import com.learning.bootlaunch.service.ArticleRestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +17,16 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/rest")
 public class ArticleRestController {
 
-    @Resource
+//    @Resource
+//    ArticleRestJDBCServiceImpl articleRestJDBCServiceImpl;
+
+    @Resource(name = "articleRestJDBCServiceImpl")
     ArticleRestService articleRestService;
 
     @RequestMapping(value = "/article", method = POST, produces = "application/json")
     public AjaxResponse saveArticle(@RequestBody Article article) {
 
-        log.info("saveArticle：{}",article);
+        articleRestService.saveArticle(article);
         return  AjaxResponse.success(article);
     }
  
@@ -30,7 +34,7 @@ public class ArticleRestController {
     @DeleteMapping("/article/{id}")
     public AjaxResponse deleteArticle(@PathVariable Long id) {
 
-        log.info("deleteArticle：{}",id);
+        articleRestService.deleteArticle(id);
         return AjaxResponse.success(id);
     }
  
@@ -38,14 +42,18 @@ public class ArticleRestController {
     public AjaxResponse updateArticle(@PathVariable Long id, @RequestBody Article article) {
         article.setId(id);
 
-        log.info("updateArticle：{}",article);
+        articleRestService.updateArticle(article);
         return AjaxResponse.success(article);
     }
  
     @RequestMapping(value = "/article/{id}", method = GET, produces = "application/json")
     public AjaxResponse getArticle(@PathVariable Long id) {
 
-        Article article1 = Article.builder().id(1L).author("zimug").content("spring boot 2.深入浅出").createTime(new Date()).title("t1").build();
-        return AjaxResponse.success(article1);
+        return AjaxResponse.success(articleRestService.getArticle(id));
+    }
+
+    @GetMapping(value = "article")
+    public AjaxResponse getAllArticle(){
+        return AjaxResponse.success(articleRestService.getAll());
     }
 }
