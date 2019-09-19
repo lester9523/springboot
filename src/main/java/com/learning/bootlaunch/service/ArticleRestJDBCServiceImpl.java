@@ -16,8 +16,7 @@ import java.util.List;
 public class ArticleRestJDBCServiceImpl implements ArticleRestService {
 
     @Resource
-    private
-    ArticleJDBCDAO articleJDBCDAO;
+    private ArticleJDBCDAO articleJDBCDAO;
 
     @Resource
     private JdbcTemplate primaryJdbcTemplate;
